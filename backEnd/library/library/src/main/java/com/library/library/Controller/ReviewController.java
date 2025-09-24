@@ -1,0 +1,39 @@
+package com.library.library.Controller;
+
+
+import com.library.library.DTO.ReviewDTO;
+import com.library.library.Service.ReviewService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/review")
+@CrossOrigin
+public class ReviewController {
+
+    public final ReviewService reviewService;
+
+    public ReviewController(ReviewService reviewService) {
+        this.reviewService = reviewService;
+    }
+
+    //Save Review endpoint
+    @PostMapping("/save")
+    public String SaveReview(@RequestBody ReviewDTO reviewDTO){
+        return reviewService.saveReview(reviewDTO);
+    }
+
+    //Update Review endpoint
+    @PostMapping("/update")
+    public String UpdateReview(@RequestBody ReviewDTO reviewDTO){
+        return reviewService.updateReview(reviewDTO);
+    }
+
+    //Get Reviews by book name
+    @GetMapping("/get/{bookName}")
+    public List<ReviewDTO> GetReviews(@PathVariable String bookName){
+        return reviewService.getReviewsByBookName(bookName);
+    }
+}
