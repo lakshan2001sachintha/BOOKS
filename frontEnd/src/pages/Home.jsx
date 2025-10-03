@@ -101,7 +101,7 @@ const Home = () => {
       />
     </figure>
     <div className="card-body">
-      <h2 className="card-title">HarryPotter 1</h2>
+      <h2 className="card-title text-green-500">HarryPotter 1</h2>
       <p>Click the button to watch on Reviews</p>
       <div className="card-actions justify-end">
         <button className="btn btn-outline btn-success rounded-3xl" onClick={() => navigate(`/review/HarryPotter1`)}>See Reviews</button>
@@ -118,7 +118,7 @@ const Home = () => {
       />
     </figure>
     <div className="card-body">
-      <h2 className="card-title">Harry Potter 2 </h2>
+      <h2 className="card-title text-green-500">Harry Potter 2 </h2>
       <p>Click the button to watch on Reviews</p>
       <div className="card-actions justify-end">
         <button className="btn btn-outline btn-success rounded-3xl" onClick={() => navigate(`/review/HarryPotter2`)}>See Reviews</button>
@@ -135,7 +135,7 @@ const Home = () => {
       />
     </figure>
     <div className="card-body">
-      <h2 className="card-title">HarryPotter 3 </h2>
+      <h2 className="card-title text-green-500">HarryPotter 3 </h2>
       <p>Click the button to watch on Reviews</p>
       <div className="card-actions justify-end">
         <button className="btn btn-outline btn-success rounded-3xl" onClick={() => navigate(`/review/HarryPotter3`)}>See Reviews</button>
@@ -152,7 +152,7 @@ const Home = () => {
       />
     </figure>
     <div className="card-body">
-      <h2 className="card-title">HarryPotter 4 </h2>
+      <h2 className="card-title text-green-500">HarryPotter 4 </h2>
       <p>Click the button to watch on Reviews</p>
       <div className="card-actions justify-end">
         <button className="btn btn-outline btn-success rounded-3xl" onClick={() => navigate(`/review/HarryPotter4`)}>See Reviews</button>

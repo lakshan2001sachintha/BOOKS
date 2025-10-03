@@ -99,4 +99,14 @@ public class ReviewService {
         return "All Reviews Deleted Successfully !";
     }
 
+    // Delete Review by Username
+    public String deleteReviewById(String id){
+        Optional<Review> reviewOpt = reviewRepository.findById(id);
+        if(reviewOpt.isPresent()){
+            reviewRepository.deleteById(id);
+            return "Review Deleted Successfully !";
+        }
+        return "Review not Found !";
+    }
+
 }

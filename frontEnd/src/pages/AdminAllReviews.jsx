@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReviewsNotFound from "../components/ReviewsNotFound";
-
+import toast from "react-hot-toast";
 
 
 const AdminAllReviews = () => {
@@ -20,6 +20,18 @@ const AdminAllReviews = () => {
         setLoading(false);
       });
   }, []);
+
+      const DeleteUserReview = async (id) => {
+        try {
+          const res = await fetch(`http://localhost:8081/api/review/delete/${id}`, { method: "DELETE" });
+          const message = await res.text();
+          toast.success(message);
+          setReviews(reviews.filter(r => r.id !== id)); // Remove deleted review from state
+        } catch (error) {
+          console.error("Error deleting review:", error);
+        }
+      };
+  
 
   if (loading)
   return (
@@ -54,7 +66,7 @@ const AdminAllReviews = () => {
                 </div>
               </div>
                <div className="py-4">
-                   <button className="btn btn-ghost btn-xs bg-red-500 text-white hover:bg-red-600">Delete</button>
+                   <button onClick={() => DeleteUserReview(review.id)} className="btn btn-ghost btn-xs bg-red-500 text-white hover:bg-red-600">Delete</button>
                </div>
             </div>
           ))}

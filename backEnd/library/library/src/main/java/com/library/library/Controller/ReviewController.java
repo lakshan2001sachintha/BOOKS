@@ -39,7 +39,7 @@ public class ReviewController {
         return reviewService.getReviewsByBookName(bookName);
     }
 
-    // Admin Things ======================================================
+    // Admin Controllers  ======================================================
 
     // Review Count
     @GetMapping("/count")
@@ -58,6 +58,10 @@ public class ReviewController {
         return reviewService.deleteAllReviews();
     }
 
+    @DeleteMapping("/delete/{id}")
+    public String deleteReviewById(@PathVariable String id){
+        return reviewService.deleteReviewById(id);
+    }
 
 }
 

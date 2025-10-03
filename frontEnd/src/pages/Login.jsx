@@ -61,7 +61,7 @@ const Login = () => {
                   placeholder={`Enter your ${field}`}
                   className="input input-bordered w-full rounded-full bg-base-200 focus:outline-none"
                   value={formData[field]}
-                  onChange={handleChange}
+                  onChange={handleChange} required
                 />
               </div>
             ))}
