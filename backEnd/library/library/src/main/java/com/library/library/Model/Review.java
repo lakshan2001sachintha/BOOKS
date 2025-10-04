@@ -17,7 +17,6 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Review {
 
     @Id
-
     private String id;
 
     private String username;

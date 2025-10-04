@@ -31,6 +31,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/review/getall").permitAll()
                         .requestMatchers("/api/review/deleteall").permitAll()
                         .requestMatchers("/api/review/delete/{id}").permitAll()
+                        .requestMatchers("/api/book/save").permitAll()
+                        .requestMatchers("/api/book/delete").permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())

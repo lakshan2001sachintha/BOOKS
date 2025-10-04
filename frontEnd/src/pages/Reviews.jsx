@@ -43,7 +43,7 @@ const Reviews = () => {
       ) : (
         <div className="grid grid-cols-1 p-16 md:grid-cols-2 gap-8 px-44">
           {reviews.map((review) => (
-// ...existing code...
+       // ...existing code...
       <div
         key={review.id}
         className="card card-side bg-base-100 rounded-xl p-4 shadow-[0_4px_1px_0_rgba(34,197,94,1)]"

@@ -160,9 +160,14 @@ const Home = () => {
     </div>
   </div>
 
-</div>
-
+   <div className='flex flex-col justify-end gap-y-9'>
+        <button className="btn btn-outline btn-success">NEXT WEEK UPDATES</button>
     </div>
+
+       </div>
+    </div>
+
+    
 
     {/*footer*/}
 
@@ -207,7 +212,7 @@ const Home = () => {
         </div>
     </nav>
     <aside>
-        <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+        <p>Copyright © {new Date().getFullYear()} Unlock the magic of a great story</p>
     </aside>
     </footer>
   </div>

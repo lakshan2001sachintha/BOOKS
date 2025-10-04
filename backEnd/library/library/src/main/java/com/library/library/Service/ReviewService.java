@@ -5,7 +5,6 @@ import com.library.library.Model.Review;
 import com.library.library.Model.User;
 import com.library.library.Repo.ReviewRepository;
 import com.library.library.Repo.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,10 +26,10 @@ public class ReviewService {
     }
 
     //save Reviews
-   public String saveReview(ReviewDTO request){
+    public String saveReview(ReviewDTO request){
         Optional<User> reviewOpt = userRepository.findByUsername(request.getUsername());
         if(reviewOpt.isPresent()){
-                User review = reviewOpt.get();
+            User review = reviewOpt.get();
             if(review.getUsername().equals(request.getUsername())){
                 Review addreview = new Review();
                 addreview.setUsername(request.getUsername());
@@ -42,31 +41,31 @@ public class ReviewService {
             }
         }
         return "User not Found !";
-   }
+    }
 
-   //GET
-   public List<ReviewDTO> getReviewsByBookName(String book_name) {
-       List<Review> reviews = reviewRepository.findByBookName(book_name);
-       return reviews.stream()
-               .map(review -> new ReviewDTO(
-                       review.getId(),
-                       review.getUsername(),
-                       review.getBookName(),
-                       review.getReview()))
-               .collect(Collectors.toList());
-   }
+    //GET
+    public List<ReviewDTO> getReviewsByBookName(String book_name) {
+        List<Review> reviews = reviewRepository.findByBookName(book_name);
+        return reviews.stream()
+                .map(review -> new ReviewDTO(
+                        review.getId(),
+                        review.getUsername(),
+                        review.getBookName(),
+                        review.getReview()))
+                .collect(Collectors.toList());
+    }
 
-   //Update Reviews
+    //Update Reviews
     public String updateReview(ReviewDTO request){
         Optional<Review> reviewOpt = reviewRepository.findByUsername(request.getUsername());
         if(reviewOpt.isPresent()){
 
-                Review review = reviewOpt.get();
-                review.setBookName(request.getBookName());
-                review.setReview(request.getReview());
+            Review review = reviewOpt.get();
+            review.setBookName(request.getBookName());
+            review.setReview(request.getReview());
 
-                reviewRepository.save(review);
-                return "Successfully updated your review !";
+            reviewRepository.save(review);
+            return "Successfully updated your review !";
 
         }
         return "User not Found !";
