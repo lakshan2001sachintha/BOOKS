@@ -4,10 +4,19 @@
 
 This project is designed for library users. It allows them to get a brief idea about content of the books available in the library, including newly added ones, based on user reviews. Library users can share their own opinions to help others. This makes it easier for readers to choose books according to their preferences
 
+ **🗸 User**
+ - See Book reviews
+ - Add Book reviews
+
+ **🗸 Admin**
+ - Handle User Reviews
+ - Add books
+
+[Demo Video about BOOKS ](https://github.com/matiassingers/awesome-readme)
 
 
 
-## Tech Stack
+## 🔧Tech Stack
 
 - **Frontend :** React Vite , JavaScript
 - **Styling :** Tailwind CSS , DaisyUI
@@ -71,3 +80,5 @@ com.library.library
 │   └── UserService
 └── LibraryApplication
 ```
+
+
