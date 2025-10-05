@@ -12,7 +12,7 @@ This project is designed for library users. It allows them to get a brief idea a
  - Handle User Reviews
  - Add books
 
-[Demo Video about BOOKS ](https://github.com/matiassingers/awesome-readme)
+[Demo Video about BOOKS ](https://www.linkedin.com/posts/sachintha-lakshan-ba293a2b4_java-springboot-mongodb-activity-7380340268908212224-iJpD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuZ6SoB32lU3lY-XxNsm0A_C-J3f7HjJLY)
 
 
 
