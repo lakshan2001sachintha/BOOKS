@@ -46,35 +46,5 @@ public class ReviewDTO {
     public void setId(String id) {
         this.id = id;
     }
-//    public String getUsername() {
-//        return username;
-//    }
-//
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
-//
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-//
-//    public String getReview() {
-//        return review;
-//    }
-//
-//    public void setReview(String review) {
-//        this.review = review;
-//    }
-//
-//    public String getBook_name() {
-//        return book_name;
-//    }
-//
-//    public void setBook_name(String book_name) {
-//        this.book_name = book_name;
-//    }
+
 }

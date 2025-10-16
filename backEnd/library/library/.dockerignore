@@ -1,0 +1,21 @@
+# Ignore target folder
+target/
+
+# IDE files
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Git files
+.git/
+.gitattributes
+.gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Scratch or temp files
+Scratches and Consoles/

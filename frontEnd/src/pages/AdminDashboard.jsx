@@ -164,9 +164,9 @@ const AdminDashboard = () => {
       {/* Proposal Progress */}
       <div className="card bg-base-100 shadow-xl lg:col-span-2">
         <div className="card-body">
-          <h2 className="card-title">Proposal Progress</h2>
+          <h2 className="card-title">Progress</h2>
           <p className="text-3xl font-bold">64</p>
-          <p className="text-gray-500">Proposals sent</p>
+          <p className="text-gray-500">-------------</p>
         </div>
       </div>
     </div>

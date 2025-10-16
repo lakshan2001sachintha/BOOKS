@@ -52,7 +52,7 @@ const Home = () => {
         <div className="navbar-end">
            <button onClick={() => navigate("/signup")} className="btn btn-active btn-success rounded-lg">SignUp</button>
             {/* Admin Button */}
-           <button onClick={() => navigate("/login")} className="btn btn-outline btn-warning rounded-lg ml-2" style={{ backgroundColor: "#dc2626", color: "#fff", border: "none" }}>Admin Panel</button>
+           <button onClick={() => navigate("/admdash")} className="btn btn-outline btn-warning rounded-lg ml-2" style={{ backgroundColor: "#dc2626", color: "#fff", border: "none" }}>Admin Panel</button>
         </div>
         </div>
 
