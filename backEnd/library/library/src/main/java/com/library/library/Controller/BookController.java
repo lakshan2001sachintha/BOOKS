@@ -29,4 +29,11 @@ public class BookController {
         bookService.deleteAllBooks();
         return ResponseEntity.noContent().build();
     }
+
+    // Fetch books from Admindashboard to Home Page
+    @GetMapping("/get")
+    public ResponseEntity<Book> getBooks(){
+        Book books = bookService.getBooks();
+        return ResponseEntity.ok(books);
+    }
 }

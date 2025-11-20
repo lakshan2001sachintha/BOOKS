@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import img1 from "../images/Untitled-1.png"
 import { useNavigate } from 'react-router-dom'
 import img3 from "../images/3.jpg"
 import img4 from "../images/4.jpg"
 import img5 from "../images/5.jpg"
 import img6 from "../images/6.jpg"
+import axios from 'axios'
 
 
-const books = [{bookName : ""} , {bookName : " "},{bookName : ""},{bookName : ""}];
 const Home = () => {
 
   const navigate = useNavigate();
+
+    const [books, setBooks] = useState({
+    bookName1: "",
+    bookName2: "",
+    bookName3: "",
+    bookName4: ""
+  });
+
+  // Fetch books for Home
+  useEffect(() =>{
+     axios
+        .get("http://localhost:8081/api/book/get")
+        .then((res) => setBooks(res.data))
+        .catch((err) => console.error("Error fetching books : ",err));
+  },[]);
 
   return (
     <div>
@@ -101,7 +116,7 @@ const Home = () => {
       />
     </figure>
     <div className="card-body">
-      <h2 className="card-title text-green-500">HarryPotter 1</h2>
+      <h2 className="card-title text-green-500 text-3xl">{books.bookName1}</h2>
       <p>Click the button to watch on Reviews</p>
       <div className="card-actions justify-end">
         <button className="btn btn-outline btn-success rounded-3xl" onClick={() => navigate(`/review/HarryPotter1`)}>See Reviews</button>
@@ -118,7 +133,7 @@ const Home = () => {
       />
     </figure>
     <div className="card-body">
-      <h2 className="card-title text-green-500">Harry Potter 2 </h2>
+      <h2 className="card-title text-green-500 text-3xl">{books.bookName2}</h2>
       <p>Click the button to watch on Reviews</p>
       <div className="card-actions justify-end">
         <button className="btn btn-outline btn-success rounded-3xl" onClick={() => navigate(`/review/HarryPotter2`)}>See Reviews</button>
@@ -135,7 +150,7 @@ const Home = () => {
       />
     </figure>
     <div className="card-body">
-      <h2 className="card-title text-green-500">HarryPotter 3 </h2>
+      <h2 className="card-title text-green-500 text-3xl">{books.bookName3}</h2>
       <p>Click the button to watch on Reviews</p>
       <div className="card-actions justify-end">
         <button className="btn btn-outline btn-success rounded-3xl" onClick={() => navigate(`/review/HarryPotter3`)}>See Reviews</button>
@@ -152,7 +167,7 @@ const Home = () => {
       />
     </figure>
     <div className="card-body">
-      <h2 className="card-title text-green-500">HarryPotter 4 </h2>
+      <h2 className="card-title text-green-500 text-3xl">{books.bookName4}</h2>
       <p>Click the button to watch on Reviews</p>
       <div className="card-actions justify-end">
         <button className="btn btn-outline btn-success rounded-3xl" onClick={() => navigate(`/review/HarryPotter4`)}>See Reviews</button>

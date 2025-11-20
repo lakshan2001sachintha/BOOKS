@@ -31,7 +31,6 @@ const Reviews = () => {
     </div>
   );
 
-
   return (
     <div className="p-10">
       <div className="flex">
@@ -69,9 +68,3 @@ const Reviews = () => {
 
 export default Reviews;
 
-//  <div key={review.id} className="card card-side bg-base-100 rounded-xl p-4 shadow-[0_4px_1px_0_rgba(34,197,94,1)]">
-//     <div className="card-body">
-//       <h2 className="card-title">{review.username}</h2>
-//       <p>{review.review}</p>
-//     </div>
-//   </div> 

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class BookService {
     private final BookRepository bookRepository;
 
+    // Save books by Admin
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
@@ -23,8 +24,13 @@ public class BookService {
         return bookRepository.save(book);
     }
 
+    // Delete Book By Admin
     public void deleteAllBooks() {
         bookRepository.deleteAll();
     }
 
+    // Get books from DB to Home page
+    public Book getBooks(){
+        return bookRepository.findAll().stream().findFirst().orElse(null);
+    }
 }

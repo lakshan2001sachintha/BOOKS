@@ -33,6 +33,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/review/delete/{id}").permitAll()
                         .requestMatchers("/api/book/save").permitAll()
                         .requestMatchers("/api/book/delete").permitAll()
+                        .requestMatchers("/api/book/get").permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())

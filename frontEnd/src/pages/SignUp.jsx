@@ -23,8 +23,16 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Password length validation
     if(formData.password.length < 6){
       toast.error("Password must be at least 6 characters!");
+      return;
+    }
+
+    // Gmail validation
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!gmailRegex.test(formData.email)) {
+      toast.error("Please enter a valid Gmail address!");
       return;
     }
 
