@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeftIcon } from 'lucide-react';
 import axios from 'axios';
 import toast from "react-hot-toast";
 import SignImg from '../images/signup.png'
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -19,6 +22,12 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(formData.password.length < 6){
+      toast.error("Password must be at least 6 characters!");
+      return;
+    }
+
     try{
          const response = await axios.post('http://localhost:8081/api/user/signup',formData);
 
@@ -28,7 +37,9 @@ const SignUp = () => {
              toast.error("Username already exists!");
          }else{
              toast.success("User registered successfully!");
+             navigate("/login") // rederect to login page
          }
+
     }catch(error){
       console.error('SignUp error:', error);
       toast.error("Server error. Please try again later.");

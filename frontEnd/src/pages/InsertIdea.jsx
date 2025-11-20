@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeftIcon } from 'lucide-react';
 import toast from "react-hot-toast";
 
 const InsertIdea = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: "",
     bookName: "",
@@ -22,6 +25,7 @@ const InsertIdea = () => {
     e.preventDefault();
 
     try {
+
       const response = await fetch("http://localhost:8081/api/review/save", { 
         method: "POST",
         headers: {
@@ -36,7 +40,9 @@ const InsertIdea = () => {
         toast.error(result);
       }else{
         toast.success("Successfully added your review ! ",result);
+        navigate("/"); // rederect to home page
       }
+      
     } catch (error) {
       toast.error("Error submitting review:", error);
       toast.error("Something went wrong!");
